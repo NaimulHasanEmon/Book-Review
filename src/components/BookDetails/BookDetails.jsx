@@ -1,13 +1,23 @@
+import React from 'react';
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import { bookExists, saveListedBooks } from '../../utility/localStorage';
 
 const BookDetails = () => {
     const bookInfo = useLoaderData();
     const {bookId} = useParams();
     const bId = parseInt(bookId)
-
     const book = bookInfo.find(book => book.bookId === bId);
-
     const{bookName, author, image, rating, category, tags, review, totalPages, publisher, yearOfPublishing} = book
+
+    const handleReadBook = () => {
+        if (bookExists(bId)) {
+            toast('Already Added!');
+        } else {
+            saveListedBooks(bId);
+            toast('Book Added to Book List.');
+        }
+    };    
 
     return (
         <div className="md:flex lg:flex gap-10 my-10">
@@ -48,13 +58,16 @@ const BookDetails = () => {
                 {/* Buttons */}
                 <div className="flex gap-5">
                     <div>
-                        <button className="btn border border-slate-400 font-bold">Read Book</button>
+                        <button
+                        onClick={() => handleReadBook()}
+                        className="btn border border-slate-400 font-bold">Read Book</button>
                     </div>
                     <div>
                         <button className="btn btn-accent text-white">Add Wishlist</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
