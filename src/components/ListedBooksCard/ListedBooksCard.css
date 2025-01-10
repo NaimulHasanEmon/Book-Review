@@ -1,0 +1,7 @@
+nav a.active {
+    border: 1px;
+    border-bottom: 0px;
+    padding: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
