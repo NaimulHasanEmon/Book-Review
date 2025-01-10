@@ -1,0 +1,80 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Alchemist",
+        "author": "Paulo Coelho",
+        "image": "https://down-ph.img.susercontent.com/file/a8dba1f0cdfd4b785f499f75ccd970b6",
+        "review": "An inspiring tale of self-discovery.",
+        "totalPages": 208,
+        "rating": 4.5,
+        "category": "Fiction",
+        "tags": ["Adventure", "Philosophy"],
+        "publisher": "HarperOne",
+        "yearOfPublishing": 1988
+    },
+    {
+        "bookId": 2,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "https://m.media-amazon.com/images/I/81CkzCy2mAL._AC_UF350,350_QL80_.jpg",
+        "review": "A powerful exploration of justice and humanity.",
+        "totalPages": 281,
+        "rating": 5.0,
+        "category": "Classic",
+        "tags": ["Drama", "Social Issues"],
+        "publisher": "J.B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "image": "https://cdn11.bigcommerce.com/s-miyiditov4/images/stencil/original/products/2136/11306/2016.1__59237.1697143838.jpg?c=2&imbypass=on&imbypass=on",
+        "review": "A captivating adventure through Middle-earth.",
+        "totalPages": 310,
+        "rating": 4.8,
+        "category": "Fantasy",
+        "tags": ["Adventure", "Epic"],
+        "publisher": "George Allen & Unwin",
+        "yearOfPublishing": 1937
+    },
+    {
+        "bookId": 4,
+        "bookName": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "image": "https://m.media-amazon.com/images/I/71zNHngqfPL._AC_UF1000,1000_QL80_.jpg",
+        "review": "A tragic story of love and ambition.",
+        "totalPages": 180,
+        "rating": 4.4,
+        "category": "Classic",
+        "tags": ["Romance", "Tragedy"],
+        "publisher": "Charles Scribner's Sons",
+        "yearOfPublishing": 1925
+    },
+    {
+        "bookId": 5,
+        "bookName": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "image": "https://booxworm.lk/cdn/shop/files/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-booxworm.png?v=1731436805&width=600",
+        "review": "A thought-provoking journey through human history.",
+        "totalPages": 443,
+        "rating": 4.7,
+        "category": "Non-Fiction",
+        "tags": ["History", "Anthropology"],
+        "publisher": "Harvill Secker",
+        "yearOfPublishing": 2011
+    },
+    {
+        "bookId": 6,
+        "bookName": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "image": "https://www.peterpauper.com/cdn/shop/products/9781441341709.PT01_1080x.png?v=1689196950",
+        "review": "A witty commentary on society and relationships.",
+        "totalPages": 279,
+        "rating": 4.6,
+        "category": "Romance",
+        "tags": ["Classic", "Society"],
+        "publisher": "T. Egerton",
+        "yearOfPublishing": 1813
+    }
+]
