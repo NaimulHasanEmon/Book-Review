@@ -1,27 +1,12 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoPeopleOutline, IoBookSharp } from "react-icons/io5";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ListedBooksCard = ({book}) => {
     const{bookId, bookName, author, image, rating, category, tags, totalPages, publisher, yearOfPublishing} = book
 
     return (
         <div>
-            <div className="mb-5">
-                <div className="flex gap-3">
-                    <div className="">
-                        <NavLink to=''>
-                            <button className="">Read Books</button>
-                        </NavLink>
-                    </div>
-                    <div className="">
-                        <NavLink to=''>
-                            <button className="">Wishlist Books</button>
-                        </NavLink>
-                    </div>
-                </div>
-                <hr />
-            </div>
             <div className="border rounded-xl shadow-lg">
                 <div className="md:flex lg:flex p-4 gap-5">
                     <div className="bg-gray-200 bg-opacity-70 min-h-28 md:min-h-36 lg:min-h-36 md:min-w-52 lg:min-w-52 items-center flex flex-col justify-center rounded-xl mb-5 md:mb-0 lg:mb-0">
