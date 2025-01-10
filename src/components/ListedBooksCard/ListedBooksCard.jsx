@@ -7,11 +7,8 @@ const ListedBooksCard = ({book}) => {
 
     return (
         <div>
-            <div>
-                <p className="flex justify-center my-5 text-4xl font-bold">Books</p>
-            </div>
             <div className="mb-5">
-                <div className="flex">
+                <div className="flex gap-3">
                     <div className="">
                         <NavLink to=''>
                             <button className="">Read Books</button>

@@ -20,7 +20,9 @@ const ListedBooks = () => {
 
     return (
         <div>
-            <p>Listed</p>
+            <div>
+                <p className="flex justify-center my-5 text-4xl font-bold">Books</p>
+            </div>
             <div className={`flex my-3 justify-center`}>
             {/* ${appliedJobs.length <= 0 && 'hidden'} */}
                     <select 
