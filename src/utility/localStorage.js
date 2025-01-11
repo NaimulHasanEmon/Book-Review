@@ -1,22 +1,22 @@
-const getListedBooks = () => {
-    const storedListedBooks = localStorage.getItem('listed-books');
+const getListedBooks = (keyName) => {
+    const storedListedBooks = localStorage.getItem(keyName);
     if (storedListedBooks) {
         return JSON.parse(storedListedBooks);
     }
     return [];
 };
 
-const saveListedBooks = (bookId) => {
-    const storedListedBooks = getListedBooks();
+const saveListedBooks = (bookId, keyName) => {
+    const storedListedBooks = getListedBooks(keyName);
     const exists = storedListedBooks.find(book => book === bookId);
     if (!exists) {
         storedListedBooks.push(bookId);
-        localStorage.setItem('listed-books', JSON.stringify(storedListedBooks));
+        localStorage.setItem(keyName, JSON.stringify(storedListedBooks));
     }
 };
 
-const bookExists = (bookId) => {
-    const storedListedBooks = getListedBooks();
+const bookExists = (bookId, keyName) => {
+    const storedListedBooks = getListedBooks(keyName);
     return storedListedBooks.includes(bookId);
 };
 

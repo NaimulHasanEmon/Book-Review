@@ -11,13 +11,25 @@ const BookDetails = () => {
     const{bookName, author, image, rating, category, tags, review, totalPages, publisher, yearOfPublishing} = book
 
     const handleReadBook = () => {
-        if (bookExists(bId)) {
+        if (bookExists(bId, 'read-books')) {
             toast('Already Added!');
         } else {
-            saveListedBooks(bId);
+            saveListedBooks(bId, 'read-books');
             toast('Book Added to Book List.');
         }
-    };    
+    };
+
+    const handleWishlist = () => {
+        if(bookExists(bId, 'read-books')) {
+            toast('You have already read this book!');
+        }
+        else if (bookExists(bId, 'whishList-books')) {
+            toast('Already Added!');
+        } else {
+            saveListedBooks(bId, 'whishList-books');
+            toast('Book Added to Wishlist.');
+        }
+    }
 
     return (
         <div className="md:flex lg:flex gap-10 my-10">
@@ -60,10 +72,12 @@ const BookDetails = () => {
                     <div>
                         <button
                         onClick={() => handleReadBook()}
-                        className="btn border border-slate-400 font-bold">Read Book</button>
+                        className="btn border border-slate-400 font-bold hover:bg-green-500">Read Book</button>
                     </div>
                     <div>
-                        <button className="btn btn-accent text-white">Add Wishlist</button>
+                        <button
+                        onClick={() => handleWishlist()}
+                        className="btn btn-accent text-white">Add Wishlist</button>
                     </div>
                 </div>
             </div>

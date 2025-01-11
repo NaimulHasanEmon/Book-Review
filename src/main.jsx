@@ -11,6 +11,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import ListedBooks from './components/ListedBooks/ListedBooks';
 import PagesToRead from './components/PagesToRead/PagesToRead';
 import BookDetails from './components/BookDetails/BookDetails';
+import WishlistContainer from './components/WishlistContainer/WishlistContainer';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: '/listedBooks',
         element: <ListedBooks></ListedBooks>,
+        // <WishlistContainer></WishlistContainer>,
         loader: () => fetch('data.json')
       },
       {

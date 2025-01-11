@@ -1,17 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getListedBooks } from "../../utility/localStorage";
-import ListedBooksCard from "../ListedBooksCard/ListedBooksCard"
 import { NavLink } from "react-router-dom";
+import WishlistBooksCard from "../BooksCard/WishlistBooksCard/WishlistBooksCard";
 
-const ListedBooks = () => {
+const WishlistContainer = () => {
     const books = useLoaderData()
 
     const[listedBooks, setListedBooks] = useState([])
     const[displayBooks, setDisplayBooks] = useState([])
 
     useEffect(() => {
-        const listOfTheBooks = getListedBooks('read-books')
+        const listOfTheBooks = getListedBooks('whishList-books')
         if(listOfTheBooks.length > 0) {
             const list = books.filter(book => listOfTheBooks.includes(book.bookId))
             setListedBooks(list)
@@ -53,10 +53,10 @@ const ListedBooks = () => {
             <div className="flex flex-col gap-5 my-10">
                 {
                     displayBooks.map(book =>
-                        <ListedBooksCard
+                        <WishlistBooksCard
                             key={book.bookId}
                             book={book}
-                        ></ListedBooksCard>
+                        ></WishlistBooksCard>
                     )
                 }
             </div>
@@ -64,4 +64,4 @@ const ListedBooks = () => {
     );
 };
 
-export default ListedBooks;
+export default WishlistContainer;
