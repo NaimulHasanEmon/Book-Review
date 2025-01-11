@@ -23,10 +23,10 @@ const BookDetails = () => {
         if(bookExists(bId, 'read-books')) {
             toast('You have already read this book!');
         }
-        else if (bookExists(bId, 'whishList-books')) {
+        else if (bookExists(bId, 'wishList-books')) {
             toast('Already Added!');
         } else {
-            saveListedBooks(bId, 'whishList-books');
+            saveListedBooks(bId, 'wishList-books');
             toast('Book Added to Wishlist.');
         }
     }
