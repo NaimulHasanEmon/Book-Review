@@ -1,0 +1,11 @@
+li a {
+    margin-right: 20px;
+}
+
+.menu-horizontal li a.active {
+    border: 2px solid rgb(57, 222, 57);
+    padding: 6px;
+    color: rgb(57, 222, 57);
+    border-radius: 6px;
+    font-weight: 500;
+}

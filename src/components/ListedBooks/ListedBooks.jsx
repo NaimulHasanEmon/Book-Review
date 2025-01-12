@@ -47,7 +47,7 @@ const ListedBooks = () => {
             {/* Dropdown filter */}
             <div className={`flex my-5 justify-center ${listedBooks.length <= 0 && "hidden"}`}>
                 <select
-                    className="select bg-green-500 text-white text-base w-28 font-semibold"
+                    className="select bg-green-500 text-white text-base w-[184px] font-semibold"
                     onChange={(e) => handleFilter(e.target.value)}
                 >
                     <option disabled hidden selected>

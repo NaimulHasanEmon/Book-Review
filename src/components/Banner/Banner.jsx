@@ -7,12 +7,12 @@ const Banner = () => {
             <div className="bg-base-200 rounded-2xl">
                 <div className="hero-content flex-col lg:flex-row-reverse lg:gap-52">
                     <img
-                    src={BannerPhoto} className="h-40 md:h-96" />
-                    <div>
-                    <h1 className="text-3xl font-bold">Books to freshen up your bookshelf</h1>
-                    <Link to='/listedBooks'>
-                        <button className="btn btn-success text-white">View The List</button>
-                    </Link>
+                    src={BannerPhoto} className="h-72 md:h-96 my-5 md:my-0 md:pr-20" />
+                    <div className='pl-3 md:pl-10'>
+                        <h1 className="text-6xl font-semibold font-serif">Books to freshen up your bookshelf</h1>
+                        <Link to='/listedBooks'>
+                            <button className="btn bg-green-500 text-white text-lg font-bold mt-10">View The List</button>
+                        </Link>
                     </div>
                 </div>
             </div>

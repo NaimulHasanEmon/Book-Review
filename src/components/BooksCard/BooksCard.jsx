@@ -12,20 +12,21 @@ const BooksCard = ({book}) => {
                     src={image}
                     alt={bookName} />
                 </div>
-                <div className="flex flex-col gap-2">
-                    <div className="flex gap-2">
-                        {
-                            tags.map((tag, index) =>
-                                <div key={index} className="badge badge-ghost text-green-500 font-semibold">
-                                    #{tag}
-                                </div>
-                            )
-                        }
+                <div className="">
+                    <div className="border-b-2 border-dashed pb-2">
+                        <div className="flex gap-2">
+                            {
+                                tags.map((tag, index) =>
+                                    <div key={index} className="badge badge-ghost text-green-500 font-semibold">
+                                        #{tag}
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <p className="text-2xl font-serif mt-3 mb-1">{bookName}</p>
+                        <p>By: <span className="font-mono">{author}</span></p>
                     </div>
-                    <p className="text-2xl font-serif">{bookName}</p>
-                    <p>By: <span className="font-mono">{author}</span></p>
-                    <hr />
-                    <div className="flex justify-between">
+                    <div className="flex justify-between mt-2">
                         <p className="text-sm">
                             {category}
                         </p>

@@ -1,7 +1,7 @@
 button.active {
     border: 1px solid;
     border-bottom: none;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     color: black;
 }
