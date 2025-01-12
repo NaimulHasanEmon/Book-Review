@@ -1,8 +1,12 @@
 import { useLoaderData } from "react-router-dom";
+import { getListedBooks } from "../../utility/localStorage";
 import PagesToReadChart from "../PagesToReadChart/PagesToReadChart";
 
 const PagesToRead = () => {
-    const allData = useLoaderData()
+    const allBooks = useLoaderData()
+    const allReadBooks = getListedBooks('read-books')
+
+    const allData = allBooks.filter(book => allReadBooks.includes(book.bookId))
 
     return (
         <div>
