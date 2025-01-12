@@ -45,7 +45,7 @@ const ListedBooks = () => {
             </div>
 
             {/* Dropdown filter */}
-            <div className={`flex my-5 justify-center ${listedBooks.length <= 0 && "hidden"}`}>
+            <div className={`flex mt-5 justify-center ${listedBooks.length <= 0 && "hidden"}`}>
                 <select
                     className="select bg-green-500 text-white text-base w-[184px] font-semibold"
                     onChange={(e) => handleFilter(e.target.value)}
@@ -60,7 +60,7 @@ const ListedBooks = () => {
             </div>
 
             {/* Read and Wishlist Buttons */}
-            <div className="mb-5 border-b">
+            <div className="my-5 border-b">
                 <div className="flex gap-3">
                     <button
                         className={`p-2 text-slate-400 ${wishlistKey === "read-books" ? "active" : ""}`}
