@@ -18,13 +18,15 @@ const ReadBooks = ({book}) => {
                             </h1>
                             <p className="font-mono">By: {author}
                             </p>
-                            <div className="flex gap-7 items-center">
-                                <div className="flex gap-2 items-center">
+                            <div className="md:flex lg:flex items-center">
+                                <div className="flex gap-2 items-center mb-2 md:mb-0 lg:mb-0">
                                     <p className="font-bold">Tag 
                                     </p>
                                     {
                                         tags.map((tag, index) =>
-                                            <div key={index} className="badge badge-ghost text-green-500 font-semibold">
+                                            <div
+                                        key={index}
+                                            className="badge badge-ghost text-green-500 font-semibold">
                                                 #{tag}
                                             </div>
                                         )
@@ -32,12 +34,15 @@ const ReadBooks = ({book}) => {
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <CiLocationOn className="text-lg" />
-                                    <p>Year of Publishing: <span className="">{yearOfPublishing}</span>
+                                    <p>Year of Publishing:
+                                        <span className="">
+                                            {yearOfPublishing}
+                                        </span>
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex gap-4 border-b-[1px] border-slate-300 pb-3">
-                                <div className="flex items-center gap-1">
+                            <div className="md:flex lg:flex border-b-[1px] border-slate-300 pb-3">
+                                <div className="flex items-center gap-1 mb-2">
                                     <IoPeopleOutline className="text-lg" />
                                     <p>Publisher: {publisher}</p>
                                 </div>
@@ -48,10 +53,10 @@ const ReadBooks = ({book}) => {
                             </div>
                         </div>
                         <div className="flex justify-between md:justify-start lg:justify-start mt-3 md:gap-2 lg:gap-2">
-                            <p className="badge badge-accent h-8 min-w-32">Category: {category}</p>
-                            <p className="badge badge-accent h-8 min-w-24">Rating: {rating}</p>
+                            <p className="badge badge-accent h-8 min-w-32 text-xs md:text-sm lg:text-sm font-semibold">Category: {category}</p>
+                            <p className="badge badge-accent h-8 min-w-24 text-xs md:text-sm lg:text-sm font-semibold">Rating: {rating}</p>
                             <Link to={`book/${bookId}`}>
-                                <p className="badge badge-accent h-8 min-w-24">
+                                <p className="badge badge-accent h-8 min-w-24 text-xs md:text-sm lg:text-sm font-semibold">
                                 View Details
                                 </p>
                             </Link>
