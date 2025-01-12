@@ -18,7 +18,7 @@ const ReadBooks = ({book}) => {
                             </h1>
                             <p className="font-mono">By: {author}
                             </p>
-                            <div className="md:flex lg:flex items-center">
+                            <div className="md:flex lg:flex gap-10 items-center">
                                 <div className="flex gap-2 items-center mb-2 md:mb-0 lg:mb-0">
                                     <p className="font-bold">Tag 
                                     </p>
@@ -41,7 +41,7 @@ const ReadBooks = ({book}) => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="md:flex lg:flex border-b-[1px] border-slate-300 pb-3">
+                            <div className="md:flex lg:flex gap-12 border-b-[1px] border-slate-300 pb-3">
                                 <div className="flex items-center gap-1 mb-2">
                                     <IoPeopleOutline className="text-lg" />
                                     <p>Publisher: {publisher}</p>
