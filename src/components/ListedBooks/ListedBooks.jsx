@@ -16,8 +16,26 @@ const ListedBooks = () => {
             const list = books.filter(book => listOfTheBooks.includes(book.bookId))
             setListedBooks(list)
             setDisplayBooks(list)
+        } else {
+            setDisplayBooks([])
+            setDisplayBooks([])
         }
     }, [wishlistKey, books]);
+
+    const handleFilter = filter => {
+        const sortedBooks = [...listedBooks]
+
+        if(filter === 'rating') {
+            sortedBooks.sort((a, b) => b.rating - a.rating)
+        }
+        else if (filter === 'numberOfPage') {
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages)
+        }
+        else if (filter === 'publishedYear') {
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing)
+        }
+        setDisplayBooks(sortedBooks)
+    }
 
     return (
         <div>
@@ -34,14 +52,13 @@ const ListedBooks = () => {
                     <option disabled hidden selected>
                         Filter By
                     </option>
-                    <option value="all">All</option>
-                    <option value="remote">Remote</option>
-                    <option value="onsite">Onsite</option>
-                    <option value="fullTime">Full Time</option>
+                    <option value="rating">Rating</option>
+                    <option value="numberOfPage">Number of Pages</option>
+                    <option value="publishedYear">Published Year</option>
                 </select>
             </div>
 
-            {/* Navigation buttons */}
+            {/* Read and Wishlist Buttons */}
             <div className="mb-5">
                 <div className="flex gap-3">
                     <NavLink to=''>

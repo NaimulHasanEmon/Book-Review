@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { bookExists, saveListedBooks } from '../../utility/localStorage';
+import { bookExists, getListedBooks, saveListedBooks } from '../../utility/localStorage';
 
 const BookDetails = () => {
     const bookInfo = useLoaderData();
@@ -13,9 +13,16 @@ const BookDetails = () => {
     const handleReadBook = () => {
         if (bookExists(bId, 'read-books')) {
             toast('Already Added!');
-        } else {
+        }
+        else {
+            if (bookExists(bId, 'wishList-books')) {
+                const updateWishList = getListedBooks('wishList-books').filter(book => book !== bId)
+                localStorage.setItem('wishList-books', JSON.stringify(updateWishList));
+                toast('Book removed from wish list and added to read list.')
+            } else {
+                toast('Book added to read list!');
+            }
             saveListedBooks(bId, 'read-books');
-            toast('Book Added to Book List.');
         }
     };
 
