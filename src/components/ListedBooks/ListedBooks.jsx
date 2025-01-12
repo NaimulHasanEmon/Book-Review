@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getListedBooks } from "../../utility/localStorage";
 import WishlistBooksCard from "../WishlistBooksCard/WishlistBooksCard";
 import ReadBooks from "../ReadBooks/ReadBooks";
+import './ListedBooks.css'
 
 const ListedBooks = () => {
     const books = useLoaderData();
@@ -39,42 +40,39 @@ const ListedBooks = () => {
 
     return (
         <div>
-            <div>
+            <div className="bg-base-200 py-1 rounded-2xl">
                 <p className="flex justify-center my-5 text-4xl font-bold">Books</p>
             </div>
 
             {/* Dropdown filter */}
-            <div className={`flex my-3 justify-center ${listedBooks.length <= 0 && "hidden"}`}>
+            <div className={`flex my-5 justify-center ${listedBooks.length <= 0 && "hidden"}`}>
                 <select
-                    className="select bg-slate-100"
+                    className="select bg-green-500 text-white text-base w-28 font-semibold"
                     onChange={(e) => handleFilter(e.target.value)}
                 >
                     <option disabled hidden selected>
-                        Filter By
+                        Sort By
                     </option>
-                    <option value="rating">Rating</option>
-                    <option value="numberOfPage">Number of Pages</option>
-                    <option value="publishedYear">Published Year</option>
+                    <option className="bg-base-200 text-black text-sm" value="rating">Rating</option>
+                    <option className="bg-base-200 text-black text-sm" value="numberOfPage">Number of pages</option>
+                    <option className="bg-base-200 text-black text-sm" value="publishedYear">Published year</option>
                 </select>
             </div>
 
             {/* Read and Wishlist Buttons */}
-            <div className="mb-5">
+            <div className="mb-5 border-b">
                 <div className="flex gap-3">
-                    <NavLink to=''>
-                        <button
-                            className=""
-                            onClick={() => setWishlistKey("read-books")}>Read Books
-                        </button>
-                    </NavLink>
-                    <NavLink to=''>
-                        <button
-                            className=""
-                            onClick={() => setWishlistKey("wishList-books")}>Wishlist Books
-                        </button>
-                    </NavLink>
+                    <button
+                        className={`p-2 text-slate-400 ${wishlistKey === "read-books" ? "active" : ""}`}
+                        onClick={() => setWishlistKey("read-books")}>
+                        Read Books
+                    </button>
+                    <button
+                        className={`p-2 text-slate-400 ${wishlistKey === "wishList-books" ? "active" : ""}`}
+                        onClick={() => setWishlistKey("wishList-books")}>
+                        Wishlist Books
+                    </button>
                 </div>
-                <hr />
             </div>
 
             {/* Dynamic rendering based on `wishlistKey` */}
