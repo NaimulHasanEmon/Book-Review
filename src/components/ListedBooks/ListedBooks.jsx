@@ -4,6 +4,7 @@ import { getListedBooks } from "../../utility/localStorage";
 import WishlistBooksCard from "../WishlistBooksCard/WishlistBooksCard";
 import ReadBooks from "../ReadBooks/ReadBooks";
 import './ListedBooks.css'
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
     const books = useLoaderData();
@@ -40,6 +41,9 @@ const ListedBooks = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Listed Books</title>
+            </Helmet>
             <div className="bg-base-200 py-1 rounded-2xl">
                 <p className="flex justify-center my-5 text-4xl font-bold">Books</p>
             </div>

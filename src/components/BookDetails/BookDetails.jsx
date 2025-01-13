@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import { bookExists, getListedBooks, saveListedBooks } from '../../utility/localStorage';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetails = () => {
     const bookInfo = useLoaderData();
@@ -40,6 +41,9 @@ const BookDetails = () => {
 
     return (
         <div className="md:flex lg:flex gap-10 my-10">
+            <Helmet>
+                <title>Book Details of {bookName}</title>
+            </Helmet>
             {/* Image */}
             <div className="md:w-1/2 lg:w-1/2 bg-base-200 flex justify-center items-center rounded-xl shadow-xl">
                 <img className="max-h-96 md:max-h-[400px] lg:max-h-[400px]" src={image} alt={bookName} />
